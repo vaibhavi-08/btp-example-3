@@ -39,7 +39,7 @@ pipeline {
                     // failFast true stops the build immediately if quality checks fail
                     
                     // Check code formatting with Black (check only, don't modify)
-                    sh 'python -m black --check .'
+                    sh'black --check . --exclude 'runtime_venv|venv|.venv|.git|__pycache__' '
                     
                     // Check style guide enforcement with Flake8
                     sh 'flake8 . --exclude=venv,.venv,.git,__pycache__'
