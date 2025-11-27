@@ -114,6 +114,7 @@ pipeline {
 
     post {
         success {
+            archiveArtifacts artifacts: 'app.log', fingerprint: true
             echo 'Pipeline completed successfully!'
         }
         failure {
