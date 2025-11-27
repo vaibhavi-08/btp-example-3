@@ -42,7 +42,7 @@ pipeline {
                     sh 'python -m black --check .'
                     
                     // Check style guide enforcement with Flake8
-                    sh 'python -m flake8 .'
+                    sh 'flake8 . --exclude=venv,.venv,.git,__pycache__'
                 }
             }
         }
