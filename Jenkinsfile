@@ -101,9 +101,6 @@ pipeline {
                             # Unpack the tarball created in the Build stage
                             tar -xzf my-python-app.tar.gz
 
-                            # Install dependencies
-                            pip install -r requirements.txt
-
                             # Run the application in the background
                             # (Using nohup so it survives the shell exit, though in Docker this is ephemeral)
                             nohup python main.py > app.log 2>&1 &
@@ -116,9 +113,6 @@ pipeline {
     }
 
     post {
-        always {
-            cleanWs() // Clean up workspace after job finishes
-        }
         success {
             echo 'Pipeline completed successfully!'
         }
