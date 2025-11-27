@@ -82,10 +82,6 @@ pipeline {
         }
 
         stage('Deploy') {
-            when {
-                // Only deploy if the branch is main or master
-                branch 'main' 
-            }
             steps {
                 script {
                     echo "🚀 Initiating Native Local Deployment..."
