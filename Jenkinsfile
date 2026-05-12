@@ -41,7 +41,7 @@ pipeline {
             steps {
                 sh '''
                 . venv/bin/activate || true
-                python -m unittest discover -p "test*.py" -v
+                pytest -v
                 '''
             }
         }
